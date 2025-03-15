@@ -13,8 +13,8 @@ public class Main {
         ClientRepository clientRepository = new ClientRepository();
         OrderRepository orderRepository = new OrderRepository();
 
-        Vehicle vehicle1 = new Vehicle(1, "BMW", "135i M", 2022, 350000);
-        Vehicle vehicle2 = new Vehicle(2, "Toyota", "SW4", 2024, 450000);
+        Vehicle vehicle1 = new Vehicle("BMW", "135i M", 2022, 350000);
+        Vehicle vehicle2 = new Vehicle("Toyota", "SW4", 2024, 450000);
         vehicleRepository.addVehicle(vehicle1);
         vehicleRepository.addVehicle(vehicle2);
 
@@ -46,12 +46,12 @@ public class Main {
             System.out.println(o);
         }
 
-//        System.out.println("\nBuscando Veículo ID 1:");
-//        Vehicle foundVehicle = vehicleRepository.findById(1);
+//        System.out.println("\nBuscando Veículo BMW 135i M:");
+//        Vehicle foundVehicle = vehicleRepository.findById(vehicle1.getId());
 //        System.out.println(foundVehicle != null ? foundVehicle : "Veículo não encontrado.");
 //
-//        System.out.println("\nRemovendo Veículo ID 1:");
-//        Vehicle vehicleRemoved = vehicleRepository.removeVehicle(1);
+//        System.out.println("\nRemovendo Veículo BMW 135i M:");
+//        Vehicle vehicleRemoved = vehicleRepository.removeVehicle(vehicle1.getId());
 //        System.out.println("Veículo de ID " + vehicleRemoved.getId() + " removido.");
 //
 //        System.out.println("\nNova Lista de Veículos:");

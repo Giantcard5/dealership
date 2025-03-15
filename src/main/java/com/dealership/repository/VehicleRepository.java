@@ -2,21 +2,21 @@ package main.java.com.dealership.repository;
 
 import main.java.com.dealership.model.Vehicle;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
-import java.util.List;
+import java.util.Set;
 
 public class VehicleRepository {
-    private List<Vehicle> vehicles = new ArrayList<>();
+    private Set<Vehicle> vehicles = new HashSet<>();
 
     public void addVehicle(Vehicle vehicle) {
         vehicles.add(vehicle);
     }
-    public Vehicle removeVehicle(int id) {
+    public Vehicle removeVehicle(String id) {
         Iterator<Vehicle> iterator = vehicles.iterator();
         while (iterator.hasNext()) {
             Vehicle vehicle = iterator.next();
-            if (vehicle.getId() == id) {
+            if (vehicle.getId().equals(id)) {
                 iterator.remove();
                 return vehicle;
             }
@@ -24,21 +24,19 @@ public class VehicleRepository {
         return null;
     }
     public void updateVehicle(Vehicle vehicle) {
-        for (int i = 0; i < vehicles.size(); i++) {
-            if (vehicles.get(i).getId() == vehicle.getId()) {
-                vehicles.set(i, vehicle);
-                break;
-            }
+        if (vehicles.contains(vehicle)) {
+            vehicles.remove(vehicle);
+            vehicles.add(vehicle);
         }
     }
 
-    public List<Vehicle> getVehicles() {
+    public Set<Vehicle> getVehicles() {
         return vehicles;
     }
 
-    public Vehicle findById(int id) {
+    public Vehicle findById(String id) {
         for (Vehicle vehicle : vehicles) {
-            if (vehicle.getId() == id) {
+            if (vehicle.getId().equals(id)) {
                 return vehicle;
             }
         }
