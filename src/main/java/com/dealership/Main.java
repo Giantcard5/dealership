@@ -2,9 +2,11 @@ package main.java.com.dealership;
 
 import main.java.com.dealership.model.Client;
 import main.java.com.dealership.model.Order;
+import main.java.com.dealership.model.Stock;
 import main.java.com.dealership.model.Vehicle;
 import main.java.com.dealership.repository.ClientRepository;
 import main.java.com.dealership.repository.OrderRepository;
+import main.java.com.dealership.repository.StockRepository;
 import main.java.com.dealership.repository.VehicleRepository;
 
 public class Main {
@@ -12,6 +14,7 @@ public class Main {
         VehicleRepository vehicleRepository = new VehicleRepository();
         ClientRepository clientRepository = new ClientRepository();
         OrderRepository orderRepository = new OrderRepository();
+        StockRepository stockRepository = new StockRepository();
 
         Vehicle vehicle1 = new Vehicle("BMW", "135i M", 2022, 350000);
         Vehicle vehicle2 = new Vehicle("Toyota", "SW4", 2024, 450000);
@@ -21,6 +24,17 @@ public class Main {
         System.out.println("\nVeículos Cadastrados:");
         for (Vehicle v: vehicleRepository.getVehicles()) {
             System.out.println(v);
+        }
+
+        Stock stock1 = new Stock(vehicle1, 1);
+        Stock stock2 = new Stock(vehicle2, 3);
+
+        stockRepository.addStock(stock1);
+        stockRepository.addStock(stock2);
+
+        System.out.println("\nEstoque Cadastrado:");
+        for (Stock s : stockRepository.getAllStocks()) {
+            System.out.println(s);
         }
 
         Client client1 = new Client(1, "Renato Soares", "renato@gmail.com", "(11) 12345-6789");
@@ -57,6 +71,27 @@ public class Main {
 //        System.out.println("\nNova Lista de Veículos:");
 //        for (Vehicle v: vehicleRepository.getVehicles()) {
 //            System.out.println(v);
+//        }
+//
+//        System.out.println("\nAdicionar Estoque BMW 135i M:");
+//        stock1.increaseQuantity(3);
+//        stockRepository.updateStock(stock1);
+//        System.out.println(stockRepository.getAllStocks());
+//
+//        System.out.println("\nRemover Estoque Toyota SW4:");
+//        boolean decreaseStock = stock2.decreaseQuantity(2);
+//        if (decreaseStock) {
+//            stockRepository.updateStock(stock2);
+//        }
+//        System.out.println(stockRepository.getAllStocks());
+//
+//        System.out.println("\nRemover Todo Estoque BMW 135i M:");
+//        Stock removedStock = stockRepository.removeStock(stock1.getId());
+//        System.out.println("Estoque Removido: " + removedStock);
+//
+//        System.out.println("\nEstoque Completo:");
+//        for (Stock s : stockRepository.getAllStocks()) {
+//            System.out.println(s);
 //        }
 //
 //        System.out.println("\nBuscando Cliente ID 1:");
