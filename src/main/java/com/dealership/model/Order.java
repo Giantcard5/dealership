@@ -22,18 +22,6 @@ public class Order {
     public int getId() {
         return id;
     }
-    public Client getClient() {
-        return client;
-    }
-    public List<Vehicle> getVehicles() {
-        return vehicles;
-    }
-    public LocalDate getOrderDate() {
-        return orderDate;
-    }
-    public double getTotalValue() {
-        return totalValue;
-    }
 
     public void addVehicle(Vehicle vehicle) {
         vehicles.add(vehicle);
