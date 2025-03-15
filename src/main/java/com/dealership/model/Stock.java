@@ -20,9 +20,12 @@ public class Stock {
     public Vehicle getVehicle() {
         return vehicle;
     }
+    public int getQuantity() {
+        return quantity;
+    }
 
     public void increaseQuantity(int amount) {
-        if (quantity > 0) {
+        if (amount > 0) {
             this.quantity += amount;
         }
     }
@@ -48,6 +51,6 @@ public class Stock {
 
     @Override
     public String toString() {
-        return "ID: " + id + ", Vehicle: " + vehicle + ", Quantity: " + quantity;
+        return "[ ID: " + id + ", Vehicle: " + vehicle + ", Quantity: " + quantity + " ]";
     }
 }

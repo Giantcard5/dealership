@@ -22,6 +22,9 @@ public class Order {
     public int getId() {
         return id;
     }
+    public List<Vehicle> getVehicles() {
+        return vehicles;
+    }
 
     public void addVehicle(Vehicle vehicle) {
         vehicles.add(vehicle);
@@ -30,6 +33,6 @@ public class Order {
 
     @Override
     public String toString() {
-        return "ID: " + id + " Client: " + client + " Vehicles: " + vehicles + " Order Date: " + orderDate + " Total Value: " + totalValue;
+        return "[ ID: " + id + " Client: " + client + " Vehicles: " + vehicles + " Order Date: " + orderDate + " Total Value: " + totalValue + " ]";
     }
 }

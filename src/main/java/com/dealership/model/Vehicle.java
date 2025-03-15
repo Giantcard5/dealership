@@ -9,12 +9,14 @@ public class Vehicle {
     private String model;
     private int year;
     private double price;
+    private int mileage;
 
-    public Vehicle(String brand, String model, int year,double price) {
+    public Vehicle(String brand, String model, int year, int mileage, double price) {
         this.id = UUID.randomUUID().toString();
         this.brand = brand;
         this.model = model;
         this.year = year;
+        this.mileage = mileage;
         this.price = price;
     }
 
@@ -23,6 +25,9 @@ public class Vehicle {
     }
     public double getPrice() {
         return price;
+    }
+    public String getModel() {
+        return model;
     }
 
     @Override
@@ -39,6 +44,6 @@ public class Vehicle {
 
     @Override
     public String toString() {
-        return "Brand: " + brand + " Model: " + model + " Year: " + year + " Price: " + price;
+        return "[ ID: " + id + " Brand: " + brand + " Model: " + model + " Year: " + year + " Mileage: " + mileage + " Price: " + price + " ]";
     }
 }

@@ -16,8 +16,9 @@ public class Main {
         OrderRepository orderRepository = new OrderRepository();
         StockRepository stockRepository = new StockRepository();
 
-        Vehicle vehicle1 = new Vehicle("BMW", "135i M", 2022, 350000);
-        Vehicle vehicle2 = new Vehicle("Toyota", "SW4", 2024, 450000);
+        Vehicle vehicle1 = new Vehicle("BMW", "135i M", 2022, 0, 350000);
+        Vehicle vehicle2 = new Vehicle("Toyota", "SW4", 2024, 0, 450000);
+
         vehicleRepository.addVehicle(vehicle1);
         vehicleRepository.addVehicle(vehicle2);
 
