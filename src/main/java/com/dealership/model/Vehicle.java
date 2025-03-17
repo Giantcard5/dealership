@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Vehicle {
-    private final String id;
+    private String id;
     private String brand;
     private String model;
     private int year;

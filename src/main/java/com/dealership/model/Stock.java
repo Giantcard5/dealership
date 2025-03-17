@@ -4,7 +4,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class Stock {
-    private final String id;
+    private String id;
     private Vehicle vehicle;
     private int quantity;
 
